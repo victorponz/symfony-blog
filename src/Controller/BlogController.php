@@ -18,12 +18,15 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 class BlogController extends AbstractController
 {
     /**
-     * @Route("/blog", name="blog")
+     * @Route("/blog/{page}", name="blog")
      */
-    public function index(): Response
+    public function index(ManagerRegistry $doctrine, int $page = 1): Response
     {
+        $repository = $doctrine->getRepository(Post::class);
+        $posts = $repository->findAllPaginated($page);
+        
         return $this->render('blog/blog.html.twig', [
-            'controller_name' => 'BlogController',
+            'posts' => $posts,
         ]);
     }
     /**
@@ -40,6 +43,8 @@ class BlogController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $comment = $form->getData(); 
             $comment->setPost($post);  
+            //Aumentamos el 1 el número de comentarios del post
+            $post->setNumComments($post->getNumComments() + 1);
             $entityManager = $doctrine->getManager();    
             $entityManager->persist($comment);
             $entityManager->flush();
