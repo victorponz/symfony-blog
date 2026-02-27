@@ -1209,3 +1209,155 @@ img{
 	margin-bottom: 20px;
 }
 /*-- End of Contact Page Stylesheet --*/
+
+/*-- Landing page redesign --*/
+.landing-page{
+	background: radial-gradient(circle at top, #1f103f 0%, #0a0a14 45%, #05050a 100%);
+	color: #eef1ff;
+}
+
+.landing-page .navbar-default{
+	background: rgba(8, 8, 20, 0.88);
+	border-color: rgba(0, 255, 224, 0.25);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+.landing-page .navbar-default .navbar-brand,
+.landing-page .navbar .nav li a,
+.landing-page .navbar-default .navbar-nav > .active > a{
+	color: #d7ddff;
+}
+
+.landing{
+	padding-top: 10px;
+}
+
+.landing-header{
+	padding: 30px 0;
+}
+
+.landing-header-inner{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.landing-kicker{
+	letter-spacing: 4px;
+	font-size: 12px;
+	color: #39ffdf;
+	margin-bottom: 10px;
+}
+
+.landing-header h1{
+	margin: 0;
+	font-size: 42px;
+	font-weight: 700;
+}
+
+.landing-header h1 span{
+	color: #ff4dff;
+}
+
+.landing-header-links a{
+	color: #a7f8ff;
+	text-decoration: none;
+	margin-left: 16px;
+	font-weight: 600;
+}
+
+.landing-hero{
+	padding: 40px 0 55px;
+}
+
+.landing-hero h2{
+	font-size: 42px;
+	line-height: 1.2;
+	margin-bottom: 15px;
+}
+
+.landing-hero p{
+	font-size: 17px;
+	max-width: 580px;
+	color: #c9d1ff;
+}
+
+.landing-cta{
+	margin-top: 16px;
+	background: linear-gradient(90deg, #39ffdf, #7f5cff, #ff4dff);
+	color: #070714;
+	border: 0;
+	font-weight: 700;
+	border-radius: 40px;
+	padding: 12px 26px;
+}
+
+.hero-glow-card{
+	padding: 26px;
+	border-radius: 18px;
+	background: linear-gradient(135deg, rgba(57, 255, 223, 0.18), rgba(255, 77, 255, 0.18));
+	border: 1px solid rgba(255, 255, 255, 0.16);
+	box-shadow: 0 0 35px rgba(57, 255, 223, 0.16);
+}
+
+.hero-glow-label{
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #39ffdf;
+}
+
+.landing-products{
+	padding: 20px 0 70px;
+}
+
+.landing-products h3{
+	font-size: 32px;
+	margin-bottom: 25px;
+}
+
+.landing-products .carousel-inner{
+	overflow: visible;
+}
+
+.product-card{
+	background: rgba(15, 15, 28, 0.92);
+	border: 1px solid rgba(127, 92, 255, 0.35);
+	border-radius: 14px;
+	padding: 14px;
+	text-align: center;
+	min-height: 330px;
+}
+
+.product-card img{
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+	border-radius: 10px;
+	margin-bottom: 14px;
+}
+
+.product-card h4{
+	color: #7ef6ff;
+}
+
+.product-card p{
+	color: #c3c9eb;
+}
+
+.landing-products .carousel-control{
+	background: none;
+	opacity: 0.9;
+}
+
+.landing-footer{
+	padding: 40px 0 45px;
+	background: rgba(6, 6, 16, 0.75);
+	border-top: 1px solid rgba(57, 255, 223, 0.3);
+}
+
+.landing-page footer.home-page{
+	display: none;
+}
