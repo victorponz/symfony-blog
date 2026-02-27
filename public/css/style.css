@@ -1584,3 +1584,68 @@ img{
 	font-size: 24px;
 	color: #eef1ff;
 }
+
+.post-neon{
+    padding: 130px 0 80px;
+}
+
+.post-neon__header{
+    max-width: 760px;
+    margin: 0 auto 40px;
+}
+
+.post-neon__kicker{
+    letter-spacing: 3px;
+    color: #58f6d2;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.post-neon__header h1{
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.post-neon__header p{
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 16px;
+}
+
+.post-neon__card{
+    background: rgba(22, 31, 56, 0.82);
+    border: 1px solid rgba(88, 246, 210, 0.16);
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: 0 14px 45px rgba(0, 0, 0, 0.35);
+}
+
+.post-neon .form-group label,
+.post-neon .control-label{
+    color: #f4f7ff;
+    font-weight: 600;
+}
+
+.post-neon__input,
+.post-neon__textarea,
+.post-neon__file{
+    background: rgba(10, 18, 38, 0.9);
+    border: 1px solid rgba(88, 246, 210, 0.2);
+    color: #f4f7ff;
+}
+
+.post-neon__textarea{
+    resize: vertical;
+    min-height: 180px;
+}
+
+.post-neon__input:focus,
+.post-neon__textarea:focus,
+.post-neon__file:focus{
+    border-color: #58f6d2;
+    box-shadow: 0 0 0 2px rgba(88, 246, 210, 0.2);
+}
+
+.post-neon .help-block,
+.post-neon .form-error-message{
+    color: #ff8aa1;
+}
