@@ -1,22 +1,36 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Register | Neon Store{% endblock %}
+{% block body_class %}landing-page{% endblock %}
 
 {% block body %}
-<div id="register">
+<section class="auth-neon">
     <div class="container">
-        <h1>Register</h1>
+        <div class="auth-neon__header text-center">
+            <p class="auth-neon__kicker">JOIN NEONSPARK</p>
+            <h1>Create account</h1>
+            <p>Register to discover exclusive drops, faster checkout and personalized recommendations.</p>
+        </div>
 
-        {{ form_start(registrationForm) }}
-            {{ form_row(registrationForm.email,  {'attr': {'class':'form-control'}}) }}
-            {{ form_row(registrationForm.name,  {'attr': {'class':'form-control'}}) }}
-            {{ form_row(registrationForm.plainPassword,  {'attr': {'class':'form-control'}}, {
-                label: 'Password'
-            }) }}
-            {{ form_row(registrationForm.agreeTerms) }}
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="auth-neon__card">
+                    {{ form_start(registrationForm, {'attr': {'class': 'auth-neon__form'}}) }}
+                        {{ form_row(registrationForm.email, {'attr': {'class': 'form-control auth-neon__input'}}) }}
+                        {{ form_row(registrationForm.name, {'attr': {'class': 'form-control auth-neon__input'}}) }}
+                        {{ form_row(registrationForm.plainPassword, {
+                            'label': 'Password',
+                            'attr': {'class': 'form-control auth-neon__input'}
+                        }) }}
+                        {{ form_row(registrationForm.agreeTerms) }}
 
-            <button type="submit" class="pull-right btn btn-lg sr-button">Register</button>
-        {{ form_end(registrationForm) }}
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-lg landing-cta">Register</button>
+                        </div>
+                    {{ form_end(registrationForm) }}
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</section>
 {% endblock %}
