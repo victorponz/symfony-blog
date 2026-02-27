@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Category;
 use App\Entity\Contact;
 use App\Form\ContactFormType;
 use Doctrine\Persistence\ManagerRegistry;
@@ -18,13 +17,9 @@ class PageController extends AbstractController
     /**
      * @Route("/", name="index")
      */
-    public function index(ManagerRegistry $doctrine, Request $request): Response
+    public function index(): Response
     {
-        $repository = $doctrine->getRepository(Category::class);
-
-        $categories = $repository->findAll();
-
-        return $this->render('page/index.html.twig', ['categories' => $categories]);
+        return $this->render('page/index.html.twig', []);
     }
 
     /**
