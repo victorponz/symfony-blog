@@ -1493,3 +1493,94 @@ img{
 	border-color: #39ffdf;
 	box-shadow: 0 0 0 2px rgba(57, 255, 223, 0.2);
 }
+
+/*-- About page neon style --*/
+.about-neon{
+	padding: 40px 0 70px;
+}
+
+.about-neon__hero{
+	max-width: 820px;
+	margin: 0 auto 30px;
+}
+
+.about-neon__kicker{
+	letter-spacing: 3px;
+	font-size: 12px;
+	color: #39ffdf;
+	text-transform: uppercase;
+}
+
+.about-neon__hero h1{
+	font-size: 44px;
+	margin-bottom: 10px;
+}
+
+.about-neon__hero p{
+	color: #c9d1ff;
+	font-size: 16px;
+}
+
+.about-neon__banner img{
+	width: 100%;
+	border-radius: 18px;
+	border: 1px solid rgba(127, 92, 255, 0.45);
+	box-shadow: 0 0 32px rgba(57, 255, 223, 0.15);
+}
+
+.about-neon__grid{
+	margin-top: 30px;
+	margin-bottom: 12px;
+}
+
+.about-neon__card,
+.about-neon__panel{
+	background: rgba(10, 10, 26, 0.9);
+	border: 1px solid rgba(127, 92, 255, 0.4);
+	box-shadow: 0 0 30px rgba(57, 255, 223, 0.12);
+	border-radius: 16px;
+	padding: 24px;
+	margin-bottom: 22px;
+	height: 100%;
+}
+
+.about-neon__card i{
+	font-size: 24px;
+	color: #39ffdf;
+	margin-bottom: 8px;
+}
+
+.about-neon__card h3,
+.about-neon__panel h2{
+	margin-top: 0;
+	color: #7ef6ff;
+}
+
+.about-neon__card p,
+.about-neon__panel p,
+.about-neon__list li,
+.about-neon__metric span{
+	color: #c3c9eb;
+}
+
+.about-neon__list li{
+	margin-bottom: 10px;
+}
+
+.about-neon__list i{
+	margin-right: 8px;
+	color: #39ffdf;
+}
+
+.about-neon__metric{
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	padding: 11px 0;
+	border-bottom: 1px solid rgba(57, 255, 223, 0.2);
+}
+
+.about-neon__metric strong{
+	font-size: 24px;
+	color: #eef1ff;
+}
