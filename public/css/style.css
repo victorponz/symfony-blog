@@ -1439,3 +1439,57 @@ img{
 	margin-right: 8px;
 	color: #39ffdf;
 }
+
+/*-- Login & register neon style --*/
+.auth-neon{
+	padding: 40px 0 70px;
+}
+
+.auth-neon__header{
+	max-width: 760px;
+	margin: 0 auto 35px;
+}
+
+.auth-neon__kicker{
+	letter-spacing: 3px;
+	font-size: 12px;
+	color: #39ffdf;
+	text-transform: uppercase;
+}
+
+.auth-neon__header h1{
+	font-size: 44px;
+	margin-bottom: 10px;
+}
+
+.auth-neon__header p{
+	color: #c9d1ff;
+	font-size: 16px;
+}
+
+.auth-neon__card{
+	background: rgba(10, 10, 26, 0.9);
+	border: 1px solid rgba(127, 92, 255, 0.4);
+	box-shadow: 0 0 30px rgba(57, 255, 223, 0.12);
+	border-radius: 16px;
+	padding: 25px;
+	margin-bottom: 20px;
+}
+
+.auth-neon .form-group label,
+.auth-neon .control-label{
+	color: #dce2ff;
+	font-weight: 600;
+}
+
+.auth-neon__input{
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid rgba(57, 255, 223, 0.28);
+	color: #eef1ff;
+	border-radius: 10px;
+}
+
+.auth-neon__input:focus{
+	border-color: #39ffdf;
+	box-shadow: 0 0 0 2px rgba(57, 255, 223, 0.2);
+}
