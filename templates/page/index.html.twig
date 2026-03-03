@@ -1,120 +1,124 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Neon Store{% endblock %}
-{% block body_class %}landing-page{% endblock %}
+{% block title %}Neon Store
+{% endblock %}
+{% block body_class %}landing-page
+{% endblock %}
 
 {% block body %}
-<div class="landing">
-    <header class="landing-header">
-        <div class="container landing-header-inner">
-            <p class="landing-kicker">NEW COLLECTION 2026</p>
-            <h1>NEON<span>SPARK</span></h1>
-            <nav class="landing-header-links">
-                <a href="#hero">Inicio</a>
-                <a href="#products">Productos</a>
-                <a href="#contact">Contacto</a>
-            </nav>
-        </div>
-    </header>
+	<div class="landing">
+		<header class="landing-header">
+			<div class="container landing-header-inner">
+				<p class="landing-kicker">NEW COLLECTION
+					{{ "now"|date("Y") }}</p>
+				<h1>NEON<span>SPARK</span>
+				</h1>
+				<nav class="landing-header-links">
+					<a href="#hero">Inicio</a>
+					<a href="#products">Productos</a>
+					<a href="#contact">Contacto</a>
+				</nav>
+			</div>
+		</header>
 
-    <section id="hero" class="landing-hero">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-7">
-                    <h2>Diseño futurista para tu setup diario</h2>
-                    <p>
-                        Descubre accesorios premium con una estética moderna: fondo oscuro, acentos fluorescentes y gradientes vibrantes.
-                    </p>
-                    <a href="#products" class="btn btn-lg landing-cta">Explorar productos</a>
-                </div>
-                <div class="col-sm-5">
-                    <div class="hero-glow-card">
-                        <p class="hero-glow-label">Top Pick</p>
-                        <h3>Aurora Headphones X</h3>
-                        <p>Audio inmersivo + cancelación inteligente de ruido.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+		<section id="hero" class="landing-hero">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-7">
+						<h2>Diseño futurista para tu setup diario</h2>
+						<p>
+							Descubre accesorios premium con una estética moderna: fondo oscuro, acentos fluorescentes y gradientes vibrantes.
+						</p>
+						<a href="#products" class="btn btn-lg landing-cta">Explorar productos</a>
+					</div>
+					<div class="col-sm-5">
+						<div class="hero-glow-card">
+							<p class="hero-glow-label">Top Pick</p>
+							<h3>Aurora Headphones X</h3>
+							<p>Audio inmersivo + cancelación inteligente de ruido.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <section id="products" class="landing-products">
-        <div class="container">
-            <h3>Product Carousel</h3>
-            <div id="productCarousel" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#productCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#productCarousel" data-slide-to="1"></li>
-                </ol>
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <article class="product-card">
-                                    <img src="{{ asset('images/blog/woman.jpg') }}" alt="Smart glasses">
-                                    <h4>Neon Glasses V2</h4>
-                                    <p>Visión AR ligera con marcos ultrafinos.</p>
-                                </article>
-                            </div>
-                            <div class="col-sm-4">
-                                <article class="product-card">
-                                    <img src="{{ asset('images/blog/family.jpg') }}" alt="Portable speaker">
-                                    <h4>Pulse Speaker</h4>
-                                    <p>Sonido 360° con iluminación reactiva.</p>
-                                </article>
-                            </div>
-                            <div class="col-sm-4">
-                                <article class="product-card">
-                                    <img src="{{ asset('images/about_us.jpg') }}" alt="Mechanical keyboard">
-                                    <h4>Quantum Keyboard</h4>
-                                    <p>Switches táctiles y efecto RGB degradado.</p>
-                                </article>
-                            </div>
-                        </div>
-                    </div>
+		<section id="products" class="landing-products">
+			<div class="container">
+				<h3>Product Carousel</h3>
+				<div id="productCarousel" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#productCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#productCarousel" data-slide-to="1"></li>
+					</ol>
+					<div class="carousel-inner" role="listbox">
+						<div class="item active">
+							<div class="row">
+								<div class="col-sm-4">
+									<article class="product-card">
+										<img src="{{ asset('images/blog/woman.jpg') }}" alt="Smart glasses">
+										<h4>Neon Glasses V2</h4>
+										<p>Visión AR ligera con marcos ultrafinos.</p>
+									</article>
+								</div>
+								<div class="col-sm-4">
+									<article class="product-card">
+										<img src="{{ asset('images/blog/family.jpg') }}" alt="Portable speaker">
+										<h4>Pulse Speaker</h4>
+										<p>Sonido 360° con iluminación reactiva.</p>
+									</article>
+								</div>
+								<div class="col-sm-4">
+									<article class="product-card">
+										<img src="{{ asset('images/about_us.jpg') }}" alt="Mechanical keyboard">
+										<h4>Quantum Keyboard</h4>
+										<p>Switches táctiles y efecto RGB degradado.</p>
+									</article>
+								</div>
+							</div>
+						</div>
 
-                    <div class="item">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <article class="product-card">
-                                    <img src="{{ asset('images/index/gallery/8.jpg') }}" alt="Smart watch">
-                                    <h4>Nebula Watch</h4>
-                                    <p>Salud, estilo y sincronización total.</p>
-                                </article>
-                            </div>
-                            <div class="col-sm-4">
-                                <article class="product-card">
-                                    <img src="{{ asset('images/index/gallery/10.jpg') }}" alt="Gaming mouse">
-                                    <h4>Flux Mouse Pro</h4>
-                                    <p>Precisión extrema para gaming competitivo.</p>
-                                </article>
-                            </div>
-                            <div class="col-sm-4">
-                                <article class="product-card">
-                                    <img src="{{ asset('images/index/gallery/12.jpg') }}" alt="4K monitor">
-                                    <h4>Nova Display 4K</h4>
-                                    <p>Pantalla nítida con contraste cinematográfico.</p>
-                                </article>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+						<div class="item">
+							<div class="row">
+								<div class="col-sm-4">
+									<article class="product-card">
+										<img src="{{ asset('images/index/gallery/8.jpg') }}" alt="Smart watch">
+										<h4>Nebula Watch</h4>
+										<p>Salud, estilo y sincronización total.</p>
+									</article>
+								</div>
+								<div class="col-sm-4">
+									<article class="product-card">
+										<img src="{{ asset('images/index/gallery/10.jpg') }}" alt="Gaming mouse">
+										<h4>Flux Mouse Pro</h4>
+										<p>Precisión extrema para gaming competitivo.</p>
+									</article>
+								</div>
+								<div class="col-sm-4">
+									<article class="product-card">
+										<img src="{{ asset('images/index/gallery/12.jpg') }}" alt="4K monitor">
+										<h4>Nova Display 4K</h4>
+										<p>Pantalla nítida con contraste cinematográfico.</p>
+									</article>
+								</div>
+							</div>
+						</div>
+					</div>
 
-                <a class="left carousel-control" href="#productCarousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                </a>
-                <a class="right carousel-control" href="#productCarousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                </a>
-            </div>
-        </div>
-    </section>
+					<a class="left carousel-control" href="#productCarousel" role="button" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					</a>
+					<a class="right carousel-control" href="#productCarousel" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					</a>
+				</div>
+			</div>
+		</section>
 
-    <footer id="contact" class="landing-footer">
-        <div class="container text-center">
-            <h4>NeonSpark © 2026</h4>
-            <p>Let’s build your next futuristic experience.</p>
-        </div>
-    </footer>
-</div>
+		<footer id="contact" class="landing-footer">
+			<div class="container text-center">
+				<h4>NeonSpark © 2026</h4>
+				<p>Let’s build your next futuristic experience.</p>
+			</div>
+		</footer>
+	</div>
 {% endblock %}
