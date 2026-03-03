@@ -10,16 +10,19 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-
+use App\Entity\Image;
 
 class PageController extends AbstractController
 {
     /**
      * @Route("/", name="index")
      */
-    public function index(): Response
+    public function index(ManagerRegistry $doctrine): Response
     {
-        return $this->render('page/index.html.twig', []);
+        $entityManager = $doctrine->getManager();
+        $images = $entityManager->getRepository(Image::class)->findAll();
+
+        return $this->render('page/index.html.twig', ['images' => $images]);
     }
 
     /**
@@ -30,23 +33,23 @@ class PageController extends AbstractController
         return $this->render('page/about.html.twig', []);
     }
 
-/**
- * @Route("/contact", name="contact")
- */
+    /**
+     * @Route("/contact", name="contact")
+     */
     public function contact(ManagerRegistry $doctrine, Request $request): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactFormType::class, $contact);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $contacto = $form->getData();    
-            $entityManager = $doctrine->getManager();    
+            $contacto = $form->getData();
+            $entityManager = $doctrine->getManager();
             $entityManager->persist($contacto);
             $entityManager->flush();
             return $this->redirectToRoute('thankyou', []);
         }
         return $this->render('page/contact.html.twig', array(
-            'form' => $form->createView()    
+            'form' => $form->createView()
         ));
     }
     /**
