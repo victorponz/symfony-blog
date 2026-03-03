@@ -1067,7 +1067,8 @@ img{
 #single .block2{
 	padding-top: 50px;
 }
-#single .block2 .comment{
+#single .block2 .comment,
+.comment{
 	margin-top: 50px;
 	padding-top: 15px;
 	padding-bottom: 15px;
@@ -1077,23 +1078,29 @@ img{
 	background-color: white;
 	color: #777;
 }
-#single .block2 .comment hr{
+#single .block2 .comment hr,
+.comment hr{
 	background-color: rgba(0,0,0,0.2);
 }
-#single .block2 .comment h4{
+#single .block2 .comment h4,
+.comment h4{
 	font-weight: bold;
 	color: #337ab7;
 }
-#single .block2 .comment i{
+#single .block2 .comment i,
+.comment i{
 	color: #d43f3a;
 }
-#single .block2 .comment p{
+#single .block2 .comment p,
+.comment p{
 	margin-top: 10px;
 }
-#single .block2 .comment .time{
+#single .block2 .comment .time,
+.comment .time{
 	color: #373d54;
 }
-#single .block2 .alt-comment{
+#single .block2 .alt-comment,
+.comment.alt-comment{
 	background-color: #eff1fa;
 }
 #single .block2 .line{
