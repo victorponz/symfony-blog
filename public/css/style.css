@@ -704,8 +704,11 @@ img{
 #blog{
 	padding-top:100px;
 	padding-bottom: 100px; 
-	background-color: rgb(245,245,245);
-	color: #f1f1f1;
+	background:
+		radial-gradient(circle at top left, rgba(101, 24, 143, 0.3), transparent 45%),
+		radial-gradient(circle at top right, rgba(22, 136, 255, 0.2), transparent 35%),
+		linear-gradient(175deg, #070b1d 0%, #0e0f2b 55%, #130822 100%);
+	color: #dbfaff;
 }
 
 #blog p{
@@ -735,10 +738,12 @@ img{
 }
 
 #blog .post{
-	background-color: white;
-	border-bottom: solid 2px rgba(0,0,0,0.1);
-	color: rgba(0,0,0,0.5);
+	background: linear-gradient(160deg, rgba(9, 18, 43, 0.92), rgba(21, 11, 46, 0.9));
+	border: 1px solid rgba(88, 237, 255, 0.35);
+	border-bottom: solid 2px rgba(88, 237, 255, 0.5);
+	color: rgba(221,245,255,0.9);
 	margin-bottom: 60px;
+	box-shadow: 0 0 20px rgba(39, 196, 255, 0.2), 0 0 40px rgba(191, 72, 255, 0.15);
 }
 #blog .post-heading{
 	color: white;
@@ -746,12 +751,13 @@ img{
 }
 #blog .post-heading span{
 	text-align: center;
-	background-color: #31b0d5;
+	background: linear-gradient(90deg, #21d4fd 0%, #b721ff 100%);
 	font-size: 13px;
 	font-weight: bold;
 	color: white;
 	padding: 3%;
 	position: absolute;
+	text-shadow: 0 0 10px rgba(255,255,255,0.5);
 }
 
 #blog .post-body{
@@ -767,12 +773,13 @@ img{
 }
 #blog .post-body h3 a,
 #blog .post-body h4 a{
-	color: #373d54;
+	color: #ddf7ff;
 	text-decoration: none;
 }
 #blog .post-body h3 a:hover,
 #blog .post-body h4 a:hover{
-	color: #151b32;
+	color: #ffffff;
+	text-shadow: 0 0 10px rgba(111, 241, 255, 0.7);
 }
 
 #blog .post-footer{
@@ -780,20 +787,22 @@ img{
 	padding-bottom: 15px;
 }
 #blog .post-footer .btn{
-	background-color: white;
+	background-color: transparent;
 	border-radius: 0px;
 	font-weight: bold;
-	border: solid 2px #373d54;
-	color: #373d54;
+	border: solid 2px #4cd9ff;
+	color: #85eeff;
 	margin-right: 10px;
+	text-shadow: 0 0 6px rgba(97, 229, 255, 0.4);
 }
 #blog .post-footer .btn:hover{
-	border: solid 2px #373d54;
-	background-color: #373d54;
+	border: solid 2px #63e0ff;
+	background-color: rgba(76, 217, 255, 0.2);
 	color: white;
+	box-shadow: 0 0 14px rgba(76, 217, 255, 0.45);
 }
 #blog .post i{
-	color: #373d54;
+	color: #86e7ff;
 }
 
 #blog .col-sm-8 p{
@@ -805,30 +814,31 @@ img{
 }
 
 #blog .form-control{
-	border-color: #e0e4f6;
-	background-color: #f8fafc;
+	border-color: rgba(76, 217, 255, 0.5);
+	background-color: rgba(8, 17, 41, 0.7);
 	border-radius: 0px;
-	color: #373d54;
+	color: #d8f8ff;
 }
 
 #blog input:focus,
 #blog input:active,
 #blog input.active{
-	border-color: #e0e4f6;
-	background-color: #f8fafc;
-	box-shadow: 0px 0px 0px ;
+	border-color: #5ce3ff;
+	background-color: rgba(11, 21, 49, 0.85);
+	box-shadow: 0 0 10px rgba(76, 217, 255, 0.35);
 }
 
 #blog .input-group-btn .btn{
 	border-radius: 0px;
-	border-color: #d9534f;
-	background-color: #c9302c;
+	border-color: #6d26ff;
+	background: linear-gradient(120deg, #3a0ca3, #7209b7);
 	color: white;
 }
 #blog .input-group-btn .btn:hover,
 #blog .input-group-btn .btn:active,
 #blog .input-group-btn .btn:focus{
-	background-color: #d43f3a;
+	background: linear-gradient(120deg, #5f18ff, #9120d0);
+	box-shadow: 0 0 12px rgba(147, 32, 208, 0.6);
 }
 
 #blog .panel{
@@ -898,14 +908,17 @@ img{
 	margin-top: 50px;
 	margin-bottom: 50px;
 	border-radius: 0px;
-	color: rgba(0,0,0,0.6);
-	box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+	color: #b8ebff;
+	background: rgba(8, 17, 41, 0.82);
+	border: 1px solid rgba(76, 217, 255, 0.3);
+	box-shadow: 0 0 16px rgba(76, 217, 255, 0.15);
 }
 
 #blog .col-sm-4 h3{
-	color: #373d54;
+	color: #dff8ff;
 	font-weight: bold;
 	margin-top: 35%;
+	text-shadow: 0 0 10px rgba(76, 217, 255, 0.5);
 }
 
 #blog .col-sm-4 .post{
