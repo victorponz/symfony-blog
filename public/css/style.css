@@ -1795,3 +1795,9 @@ img {
 .post-neon .form-error-message {
 	color: #ff8aa1;
 }
+
+.admin-pages {
+	background: none;
+	background-color: #fff;
+	color: #000;
+}
