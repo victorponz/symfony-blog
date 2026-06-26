@@ -8,66 +8,41 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
-/**
- * @ORM\Entity(repositoryClass=PostRepository::class)
- */
+#[ORM\Entity(repositoryClass: PostRepository::class)]
 class Post
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
-     * (message="Field `Title` is mandatory")
-     */
+    #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\NotBlank(message: 'Field `Title` is mandatory')]
     private $Title;
 
-    /**
-     * @ORM\Column(type="text")
-     * @Assert\NotBlank
-     * (message="Field `Content` is mandatory")
-     */
+    #[ORM\Column(type: 'text')]
+    #[Assert\NotBlank(message: 'Field `Content` is mandatory')]
     private $Content;
 
-    /**
-     * @ORM\Column(type="datetime")
-     * /
-     */
+    #[ORM\Column(type: 'datetime')]
     private $PublishedAt;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="posts")
-     */
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'posts')]
     private $User;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
+    #[ORM\Column(type: 'string', length: 255)]
     private $Image;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
+    #[ORM\Column(type: 'string', length: 255)]
     private $Slug;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Column(type: 'integer')]
     private $NumLikes;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
+    #[ORM\Column(type: 'string', length: 255)]
     private $NumComments;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="post")
-     */
+    #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'post')]
     private $comments;
 
     public function __construct()

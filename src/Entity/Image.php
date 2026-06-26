@@ -5,41 +5,27 @@ namespace App\Entity;
 use App\Repository\ImageRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=ImageRepository::class)
- */
+#[ORM\Entity(repositoryClass: ImageRepository::class)]
 class Image
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
+    #[ORM\Column(type: 'string', length: 255)]
     private $File;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Column(type: 'integer')]
     private $NumLikes;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Column(type: 'integer')]
     private $NumViews;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Column(type: 'integer')]
     private $NumDownloads;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="images")
-     */
+    #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'images')]
     private $Category;
 
     public function getId(): ?int

@@ -7,26 +7,18 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=CategoryRepository::class)
- */
+#[ORM\Entity(repositoryClass: CategoryRepository::class)]
 class Category
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
+    #[ORM\Column(type: 'string', length: 255)]
     private $name;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="Category")
-     */
+    #[ORM\OneToMany(targetEntity: Image::class, mappedBy: 'Category')]
     private $images;
 
     public function __construct()

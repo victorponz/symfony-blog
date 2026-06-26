@@ -6,51 +6,32 @@ use App\Repository\ContactRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
-/**
- * @ORM\Entity(repositoryClass=ContactRepository::class)
- */
+#[ORM\Entity(repositoryClass: ContactRepository::class)]
 class Contact
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
-     * (message="Field `First Name` is mandatory")
-     */
+    #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\NotBlank(message: 'Field `First Name` is mandatory')]
     private $FirstName;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $LastName;
 
-    /**
-    * @ORM\Column(type="string", length=255)
-    * @Assert\NotBlank()
-    * @Assert\Email
-    * (message="{{ value }} is not a valid email")
-    */
+    #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\NotBlank]
+    #[Assert\Email(message: '{{ value }} is not a valid email')]
     private $Email;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
-     * (message="Field `Subject` is mandatory")
-     * 
-     */
+    #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\NotBlank(message: 'Field `Subject` is mandatory')]
     private $Subject;
 
-    /**
-     * @ORM\Column(type="text")
-     * @Assert\NotBlank
-     * (message="Field `First Name` is mandatory")
-     */
+    #[ORM\Column(type: 'text')]
+    #[Assert\NotBlank(message: 'Field `Message` is mandatory')]
     private $Message;
 
     public function getId(): ?int
