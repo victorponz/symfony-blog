@@ -1,63 +1,63 @@
 {% extends 'base.html.twig' %}
-{% block title%}Blog{% endblock %}
-{% block body%}
-<!-- Principal Content Start -->
-   <div id="contact">
-   	  <div class="container">
-   	    <div class="col-xs-12 col-sm-8 col-sm-push-2">
-       	   <h1>CONTACT US</h1>
-       	   <hr>
-       	   <p>Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-			{{ form_start(form, {'attr': {'class':'form-horizontal'}}) }}
-			{{ form_errors(form) }}
-				<div class="form-group">
-					<div class="col-xs-6">
-						{{ form_row(form.FirstName, {'attr': {'class':'form-control'}}) }}
-					</div>
-					<div class="col-xs-6">
-						{{ form_row(form.LastName, {'attr': {'class':'form-control'}}) }}
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-xs-12">
-						{{ form_row(form.Email, {'attr': {'class':'form-control'}}) }}
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-xs-12">
-						{{ form_row(form.Subject, {'attr': {'class':'form-control'}}) }}
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-xs-12">
-						{{ form_row(form.Message, {'attr': {'class':'form-control'}}) }}
-						{{ form_row(form.Send, {'attr': {'class':'pull-right btn btn-lg sr-button'}}) }}
-					</div>
-				</div>
-			{{ form_end(form) }}
-	       <hr class="divider">
-	       <div class="address">
-	           <h3>GET IN TOUCH</h3>
-	           <hr>
-	           <p>Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero.</p>
-		       <div class="ending text-center">
-			        <ul class="list-inline social-buttons">
-			            <li><a href="#"><i class="fa fa-facebook sr-icons"></i></a>
-			            </li>
-			            <li><a href="#"><i class="fa fa-twitter sr-icons"></i></a>
-			            </li>
-			            <li><a href="#"><i class="fa fa-google-plus sr-icons"></i></a>
-			            </li>
-			        </ul>
-				    <ul class="list-inline contact">
-				       <li class="footer-number"><i class="fa fa-phone sr-icons"></i>  (00228)92229954 </li>
-				       <li><i class="fa fa-envelope sr-icons"></i>  kouvenceslas93@gmail.com</li>
-				    </ul>
-				    <p>Photography Fanatic Template &copy; 2017</p>
-		       </div>
-	       </div>
-	    </div>   
-   	  </div>
-   </div>
-<!-- Principal Content Start -->
+
+{% block title %}Contact | Neon Store{% endblock %}
+{% block body_class %}landing-page{% endblock %}
+
+{% block body %}
+<section class="contact-neon">
+    <div class="container">
+        <div class="contact-neon__header text-center">
+            <p class="contact-neon__kicker">NEONSPARK SUPPORT</p>
+            <h1>Get in touch</h1>
+            <p>Have a project in mind or questions about our products? Send us a message and we’ll get back to you quickly.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-7">
+                <div class="contact-neon__card">
+                    {{ form_start(form, {'attr': {'class': 'contact-neon__form'}}) }}
+                    {{ form_errors(form) }}
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {{ form_row(form.FirstName, {'attr': {'class': 'form-control contact-neon__input'}}) }}
+                        </div>
+                        <div class="col-sm-6">
+                            {{ form_row(form.LastName, {'attr': {'class': 'form-control contact-neon__input'}}) }}
+                        </div>
+                    </div>
+
+                    {{ form_row(form.Email, {'attr': {'class': 'form-control contact-neon__input'}}) }}
+                    {{ form_row(form.Subject, {'attr': {'class': 'form-control contact-neon__input'}}) }}
+                    {{ form_row(form.Message, {'attr': {'class': 'form-control contact-neon__textarea'}}) }}
+
+                    <div class="text-right">
+                        {{ form_row(form.Send, {'attr': {'class': 'btn btn-lg landing-cta'}}) }}
+                    </div>
+
+                    {{ form_end(form) }}
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <aside class="contact-neon__card contact-neon__info">
+                    <h3>Contact information</h3>
+                    <p>We usually respond within 24 hours from Monday to Friday.</p>
+
+                    <ul class="list-unstyled contact-neon__list">
+                        <li><i class="fa fa-phone"></i> (00228) 92229954</li>
+                        <li><i class="fa fa-envelope"></i> support@neonspark.com</li>
+                        <li><i class="fa fa-map-marker"></i> Lomé, Togo</li>
+                    </ul>
+
+                    <ul class="list-inline social-buttons">
+                        <li><a href="#"><i class="fa fa-facebook sr-icons"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter sr-icons"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus sr-icons"></i></a></li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

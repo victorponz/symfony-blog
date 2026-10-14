@@ -1,98 +1,90 @@
 {% extends 'base.html.twig' %}
-{% block title%}Blog{% endblock %}
-{% block body%}
-   <div id="index">
 
-    <!-- Header -->
-      <div class="row">
-         <div class="col-xs-12 intro">
-            <div class="carousel-inner">
-               <div class="item active">
-                <img class="img-responsive" src="images/index/woman.jpg" alt="header picture">
-               </div>
-               <div class="carousel-caption">
-                  <h1>FIND NICE PICTURES HERE</h1>
-                  <hr>
-               </div>
-            </div>
-         </div>
-      </div>
+{% block title %}Neon Store
+{% endblock %}
+{% block body_class %}landing-page
+{% endblock %}
 
-      <div id="index-body">
-      <!-- Pictures Navigation table -->
-        <div class="table-responsive">
-          <table class="table text-center">
-            <thead>
-              <tr>
-              {% for category in categories %}
-                <td><a class="link {{loop.first ? 'active' : ''}}" href="#category{{category.id}}" data-toggle="tab">{{category.name}}</a></td>
-              {% endfor %}
-              </tr>
-            </thead>
-          </table>
-          <hr>
-        </div>
-      
-        <!-- Navigation Table Content -->
-        <div class="tab-content">
-          {% for category in categories %}
-            <div id="category{{category.id}}" class="tab-pane {{loop.first ? 'active' : ''}}" >
-              <div class="row popup-gallery">
-              {% for image in category.images %}
-              {{ include ('partials/image.html.twig')}}
-              {% endfor %}
-                </div>
-            </div>
-        {% endfor %}
+{% block body %}
+	<div class="landing">
+		<header class="landing-header">
+			<div class="container landing-header-inner">
+				<p class="landing-kicker">NEW COLLECTION
+					{{ "now"|date("Y") }}</p>
+				<h1>NEON<span>SPARK</span>
+				</h1>
+				<nav class="landing-header-links">
+					<a href="#hero">Inicio</a>
+					<a href="#products">Productos</a>
+					<a href="#contact">Contacto</a>
+				</nav>
+			</div>
+		</header>
 
-        </div>
-    <!-- End of Navigation Table Content -->
-      </div><!-- End of Index-body box -->
+		<section id="hero" class="landing-hero">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-7">
+						<h2>Diseño futurista para tu setup diario</h2>
+						<p>
+							Descubre accesorios premium con una estética moderna: fondo oscuro, acentos fluorescentes y gradientes vibrantes.
+						</p>
+						<a href="#products" class="btn btn-lg landing-cta">Explorar productos</a>
+					</div>
+					<div class="col-sm-5">
+						<div class="hero-glow-card">
+							<p class="hero-glow-label">Top Pick</p>
+							<h3>Aurora Headphones X</h3>
+							<p>Audio inmersivo + cancelación inteligente de ruido.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Newsletter form -->
-      <div class="index-form text-center">
-        <h3>SUSCRIBE TO OUR NEWSLETTER </h3>
-        <h5>Suscribe to receive our News and Gifts</h5>
-        <form class="form-horizontal">
-          <div class="form-group">
-            <div class="col-xs-12 col-sm-6 col-sm-push-3 col-md-4 col-md-push-4">
-            <input class="form-control" type="text" placeholder="Type here your email address">
-            <a href="" class="btn btn-lg sr-button">SUBSCRIBE</a>
-            </div>
-          </div>
-        </form>
-      </div>
-    <!-- End of Newsletter form -->  
+		<section id="products" class="landing-products">
+			<div class="container">
+				<h3>Images Carousel</h3>
+				<div id="productCarousel" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						{% for image in images %}
+							{% if loop.index0 is divisible by(3) %}
+								<li data-target="#productCarousel" data-slide-to="{{ loop.index0 // 3 }}" class="{% if loop.first %}active{% endif %}"></li>
+							{% endif %}
+						{% endfor %}
+					</ol>
+					<div class="carousel-inner" role="listbox">
+						{% for image in images %}
+							{% if loop.index0 is divisible by(3) %}
+								<div class="item {% if loop.first %}active{% endif %}">
+									<div class="row">
+									{% endif %}
 
-    <!-- Box within partners name and logo -->
-      <div class="last-box row">
-        <div class="col-xs-12 col-sm-4 col-sm-push-4 last-block">
-        <div class="partner-box text-center">
-          <p>
-          <i class="fa fa-map-marker fa-2x sr-icons"></i> 
-          <span class="text-muted">35 North Drive, Adroukpape, PY 88105, Agoe Telessou</span>
-          </p>
-          <h4>Our Main Partners</h4>
-          <hr>
-          <div class="text-muted text-left">
-            <ul class="list-inline">
-              <li><img src="images/index/log2.jpg" alt="logo"></li>
-              <li>First Partner Name</li>
-            </ul>
-            <ul class="list-inline">
-              <li><img src="images/index/log1.jpg" alt="logo"></li>
-              <li>Second Partner Name</li>
-            </ul>
-            <ul class="list-inline">
-              <li><img src="images/index/log3.jpg" alt="logo"></li>
-              <li>Third Partner Name</li>
-            </ul>
-          </div>
-        </div>
-        </div>
-      </div>
-    <!-- End of Box within partners name and logo -->
+									{% include 'partials/image.html.twig' with {'image': image} %}
 
-   </div><!-- End of index box -->
+									{% if loop.index is divisible by(3) or loop.last %}
+									</div>
+								</div>
+							{% endif %}
+						{% endfor %}
+					</div>
 
+					<a class="left carousel-control" href="#productCarousel" role="button" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					</a>
+					<a class="right carousel-control" href="#productCarousel" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<footer id="contact" class="landing-footer">
+			<div class="container text-center">
+				<h4>NeonSpark ©
+					{{ "now"|date("Y") }}</h4>
+				<p>Let’s build your next futuristic experience.</p>
+			</div>
+		</footer>
+	</div>
 {% endblock %}

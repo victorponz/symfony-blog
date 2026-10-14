@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Category;
 use App\Entity\Contact;
+use App\Entity\Image;
 use App\Form\ContactFormType;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -12,17 +12,15 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Attribute\Route;
 
-
 class PageController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function index(ManagerRegistry $doctrine, Request $request): Response
+    public function index(ManagerRegistry $doctrine): Response
     {
-        $repository = $doctrine->getRepository(Category::class);
+        $entityManager = $doctrine->getManager();
+        $images = $entityManager->getRepository(Image::class)->findAll();
 
-        $categories = $repository->findAll();
-
-        return $this->render('page/index.html.twig', ['categories' => $categories]);
+        return $this->render('page/index.html.twig', ['images' => $images]);
     }
 
     #[Route('/about', name: 'about')]
